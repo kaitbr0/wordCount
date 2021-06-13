@@ -1,0 +1,19 @@
+{
+  "name": "wordCount",
+  "version": "1.0.0",
+  "description": "backend for word/sentence counter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaitbr0/wordCount.git"
+  },
+  "author": "kaitbr0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaitbr0/wordCount/issues"
+  },
+  "homepage": "https://github.com/kaitbr0/wordCount#readme"
+}
