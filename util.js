@@ -39,9 +39,20 @@ function paragraphCount(textBody) {
   return count;
 }
 
+function bigrams(textBody) {
+  let arr = textBody.split(' ');
+  var punctuationless = arr.map((word) => {
+    return word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '');
+  });
+  let obj = {};
+  //add logic to map memo here
+  return obj;
+}
+
 module.exports = {
   wordCount,
   charCount,
   sentenceCount,
   paragraphCount,
+  bigrams,
 };

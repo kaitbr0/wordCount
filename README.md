@@ -1,11 +1,12 @@
-# WORD COUNT
+# Challenge #2 - Word Count Challenge
 
 <p>Express RESTful server can parse a json object to count characters, words, sentences, paragraphs</p>
 
 ## RUN ME
 
+0. CD wordCount
 1. npm install
-2. node index.js
+2. npm run start
 
 ### Character Count
 
@@ -55,6 +56,16 @@ curl --location --request GET 'http://localhost:5000/api/sentence' \
    --data-raw '{
    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n \n Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. this is a test! i hope so? \n \n \n this is another line i guess"
    }'
+```
+
+### Bigrams
+
+- Should return all unique pairs of adjacent words.
+- 5 unique pairs
+- 1 pair has count (2)
+
+```
+    Write a sentence, and write a story.
 ```
 
 ### TO-DO

@@ -4,6 +4,7 @@ const {
   charCount,
   sentenceCount,
   paragraphCount,
+  bigrams,
 } = require('../util.js');
 router.get('/word', (req, res, next) => {
   let { text } = req.body;
@@ -50,6 +51,20 @@ router.get('/paragraph', (req, res, next) => {
     try {
       let count = paragraphCount(text);
       res.send(`Paragraph Count: ${count}`);
+    } catch (error) {
+      next(error);
+    }
+  } else {
+    res.send('attach some text to the request body');
+  }
+});
+router.get('/bigrams', (req, res, next) => {
+  let { text } = req.body;
+  if (text) {
+    try {
+      let count = bigrams(text);
+
+      res.send(`Bigrams: ${count}`);
     } catch (error) {
       next(error);
     }
