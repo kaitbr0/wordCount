@@ -1,10 +1,12 @@
 const router = require('express').Router();
+const e = require('express');
 const {
   wordCount,
   charCount,
   sentenceCount,
   paragraphCount,
   bigrams,
+  readingLevel,
 } = require('../util.js');
 router.get('/word', (req, res, next) => {
   let { text } = req.body;
@@ -60,11 +62,24 @@ router.get('/paragraph', (req, res, next) => {
 });
 router.get('/bigrams', (req, res, next) => {
   let { text } = req.body;
+  let count = {};
   if (text) {
     try {
-      let count = bigrams(text);
-
-      res.send(`Bigrams: ${count}`);
+      count = bigrams(text);
+      res.send(`Bigrams: ${JSON.stringify(count)}`);
+    } catch (error) {
+      next(error);
+    }
+  } else {
+    res.send('attach some text to the request body');
+  }
+});
+router.get('/level', (req, res, next) => {
+  let { text } = req.body;
+  if (text) {
+    try {
+      let result = readingLevel(text);
+      res.send(result);
     } catch (error) {
       next(error);
     }

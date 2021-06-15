@@ -65,7 +65,24 @@ curl --location --request GET 'http://localhost:5000/api/sentence' \
 - 1 pair has count (2)
 
 ```
-    Write a sentence, and write a story.
+curl --location --request GET 'http://localhost:5000/api/bigrams' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "text": "Write a sentence, and write a story."
+}'
+```
+
+### Reading Level
+
+- Should return reading level 3
+- Based off a lecture from Harvard CS-50
+
+```
+curl --location --request GET 'localhost:5000/api/level' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "text": "Congratulations! Today is your day. You'\''re off to Great Places! You'\''re off and away!"
+}'
 ```
 
 ### TO-DO
@@ -74,6 +91,6 @@ curl --location --request GET 'http://localhost:5000/api/sentence' \
 2. ~~Word Count~~
 3. ~~Sentence Count~~
 4. ~~Paragraph Count~~
-5. Bigrams (counts of unique pairs of words)
-6. Come up with your own features! Use this as an opportunity to show off! We’ll be impressed by
-   creative, well-presented solutions.
+5. ~~Bigrams (counts of unique pairs of words)~~
+6. ~~Come up with your own features! Use this as an opportunity to show off! We’ll be impressed by
+   creative, well-presented solutions.~~
