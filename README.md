@@ -1,6 +1,7 @@
 # Challenge #2 - Word Count Challenge
 
-<p>Express RESTful server can parse a json object to count characters, words, sentences, paragraphs</p>
+<p>Express RESTful server can parse a json object to count characters, words, sentences, paragraphs, and bigrams</p>
+<p>Bonus feature: can calculate reading level</p>
 
 ## RUN ME
 
